@@ -1,0 +1,460 @@
+---
+---
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$font-normal:       'Open Sans', sans-serif;
+$font-header:       'Raleway', sans-serif;
+
+$font-stack:		$font-normal;
+$standard-padding:	30px;
+$accent-blue:		#63B5BC;
+$dark-grey:			#333;
+
+$imgAssetPath:		"../images";
+
+// Header and footer colors
+$hf-main-color:     #F5F5F5;
+$hf-secondary-color: darken( $hf-main-color, 10 );
+
+$mobile: new-breakpoint(max-width 600px 4);
+$midsize: new-breakpoint(max-width 1000px 4);
+
+body {
+	font: 100% $font-stack;
+	font-size: 16px;
+	line-height: 1.5625;
+}
+
+h1, h2 {
+	font-family: $font-header;
+	color: $dark-grey;
+}
+
+a {
+	color: $accent-blue;
+	text-decoration: none;
+}
+
+a:hover {
+	color: $accent-blue;
+	text-decoration: underline;
+}
+
+#content {
+	@include outer-container;
+
+	padding: 1em;
+}
+
+clear {
+    clear: both;
+}
+
+section {
+	clear: both;
+
+	img {
+		float: left;
+		margin: 0 15px 10px 0;
+		width: 150px;
+
+		@include media($mobile) {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	aside {
+		font-family: $font-header;
+		display: inline;
+		font-size: 2em;
+		color: $dark-grey;
+	}
+
+    subhead {
+        font-family: $font-header;
+		display: block;
+		font-size: 1.5em;
+		color: $dark-grey;
+    }
+}
+
+@mixin repeating-background( $imgpath ) {
+	background-image: url( '#{$imgAssetPath}/#{$imgpath}' );
+	background-position: 0 0;
+	background-repeat: repeat;
+}
+
+header {
+	background-color: #ffffff;
+
+	text-align: center;
+
+	#logo {
+		padding-top: .3em;
+	}
+
+	#navigation {
+		font-family: $font-normal;
+		font-size: 0.9em;
+		background-color: $hf-main-color;
+        border-top: 1px solid $hf-secondary-color;
+        border-bottom: 1px solid $hf-secondary-color;
+	}
+
+	#navigation .active a {
+		background-color: $accent-blue;
+		color: white;
+	}
+
+	#navigation ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	#navigation li {
+		display: inline-block;
+
+		@include media($mobile) {
+			display: block;
+		}
+	}
+
+	#navigation a {
+		display: block;
+		color: black;
+		text-decoration: none;
+
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+	}
+
+	#navigation li:hover {
+		
+	}
+
+	#navigation a:hover {
+		background-color: $accent-blue;
+		color: white;
+	}
+}
+
+footer {
+	background-color: #ffffff;
+
+	#greybar {
+		background-color: $hf-main-color;
+        border-top: 1px solid $hf-secondary-color;
+        border-bottom: 1px solid $hf-secondary-color;
+        
+		display: block;
+		height: 2.2em;
+	}
+
+	#social_links {
+		@include outer-container;
+	}
+
+	#social_links img {
+		$img-dimensions:	75px;
+
+		height: $img-dimensions;
+		width: $img-dimensions;
+	}
+
+	#social_links .item {
+		@include span-columns(4);
+		text-align: center;
+		padding-top: 1em;
+	}
+
+	#tagline {
+		text-align: center;
+		line-height: .5em;
+		padding-bottom: .5em;
+	}
+}
+
+// How To Help
+#partners {
+	// background-color: red;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	li {
+		padding: 1em;
+		display: block;
+		width: 150px;
+		text-align: center;
+
+		@include span-columns(2 of 4);
+		@include omega(2n);
+
+		@include media($mobile) {
+			width: 100%;
+		}
+	}
+
+	li a {
+		color: $dark-grey;
+	}
+
+	li img {
+		width: 100%;
+	}
+}
+
+// Image Caption Panels
+.imagecaptionpanel {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+    clear: both;
+
+	li {
+		padding: 1em;
+		display: block;
+		width: 150px;
+		text-align: center;
+
+		@include span-columns(3);
+		@include omega(4n);
+
+		@include media($mobile) {
+			width: 100%;
+		}
+	}
+
+	li a {
+		color: $dark-grey;
+	}
+
+	li img {
+		width: 100%;
+	}
+}
+
+// Index
+#hero {
+	text-align: center;
+
+	h1 {
+		display: inline;
+
+		@include media( $mobile ) {
+			display: block;
+			margin: 0;
+		}
+	}
+
+	img {
+		width: 100%;
+	}
+
+	tagline {
+		font-family: $font-header;
+		font-size: .9em;
+	}
+}
+
+.centertext {
+	text-align: center;
+}
+
+.wrapper {
+	@include outer-container;
+}
+
+.onethirdcolumn {
+    @include span-columns(4);
+
+    @include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#fundraiser {
+    text-align: center;
+    font-size: 14px;
+    padding-top: 2.5em;
+
+    a {
+        font-weight: bold;
+    }
+
+    @include media( $mobile ) {
+		padding-top: 0;
+	}
+}
+
+.bignumber {
+    display: inline;
+    font-weight: bold;
+    font-size: 15px;
+    color: $accent-blue;
+}
+
+#aboutweprovide {
+	@include span-columns(8);
+	text-align: left;
+
+	h2 {
+		margin: 0;
+	}
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#aboutpartners {
+	@include span-columns(4);
+	text-align: center;
+
+	h2 {
+		margin: 0;
+	}
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#homeaboutus {
+	@include span-columns(6);
+	text-align: center;
+
+	h2 {
+		margin: 0;
+	}
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#homehowtohelp {
+	@include span-columns(6);
+	text-align: center;
+
+	h2 {
+		margin: 0;
+	}
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#contactform {
+    @include span-columns(8);
+	text-align: left;
+
+	h2 {
+		margin: 0;
+	}
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+    }
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#contactinfo {
+    @include span-columns(4);
+	text-align: left;
+
+	h2 {
+		margin: 0;
+	}
+
+	@include media( $mobile ) {
+		width: 100%;
+	}
+}
+
+#joinlist {
+	clear: both;
+
+	text-align: center;
+}
+
+.formelement {
+	height: 30px;
+}
+
+// Stories
+
+author {
+	font-weight: bold;
+	color: $dark-grey;
+}
+
+#stories {
+	a {
+		color: $dark-grey;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	.story {
+		border-bottom: 1px dashed $dark-grey;
+		border-top: 1px dashed $dark-grey;
+	}
+}
+
+// Dropdown menu
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+img.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

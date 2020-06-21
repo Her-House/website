@@ -1,0 +1,24 @@
+<div id="navigation">
+	<ul>
+		<li class="{%if activePage == 'home' %}active{% endif %}"><a href="index.html">Welcome</a></li>
+        <li class="dropdown">
+			<a href="about.html" class="dropbtn {%if activePage == 'about' %}active{% endif %}">About Us</a>
+			<div class="dropdown-content">
+				<a href="board.html">Meet the Board</a>
+                <a href="news.html">News</a>
+                <a href="newsletter.html">Newsletter</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropbtn {%if activePage == 'supportus' %}active{% endif %}">Support Us</a>
+			<div class="dropdown-content">
+				<a href="donate.html">Donate</a>
+				<a href="itemneeds.html">Item Needs</a>
+				<a href="volunteer.html">Volunteer</a>
+			</div>
+		</li>
+		<li class="{%if activePage == 'calendar' %}active{% endif %}"><a href="calendar.html">Calendar</a></li>
+		<li class="{%if activePage == 'contact' %}active{% endif %}"><a href="contact.html">Contact</a></li>
+		<li><a href="https://herhouseministry.blogspot.com/">Blog</a></li>
+	</ul>
+</div>

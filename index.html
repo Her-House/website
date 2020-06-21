@@ -1,0 +1,121 @@
+---
+layout: default
+title: Her House Ministry
+---
+
+<!-- Create your slider and add images -->
+<div id="slider">
+  <img src="images/hero_new.png" alt="" />
+</div>
+
+<!-- Create your slider -->
+<script>
+  var slider = new IdealImageSlider.Slider({
+    selector: "#slider",
+    interval: 6000,
+  });
+
+  slider.start();
+</script>
+
+<div class="wrapper">
+  <div id="homeaboutus">
+    <h2>
+      <a href="about.html">MORE ABOUT US</a>
+    </h2>
+  </div>
+
+  <div id="homehowtohelp">
+    <h2>
+      <a href="donate.html">DONATE</a>
+    </h2>
+  </div>
+</div>
+
+<div id="joinlist">
+  <h2>Join our email list!</h2>
+  <p>
+    Sign up here to get emails and updates about Her House!
+  </p>
+
+  <!-- Begin MailChimp Signup Form -->
+  <div id="mc_embed_signup">
+    <form
+      action="//herhouseministry.us3.list-manage.com/subscribe/post?u=8f9a0fd92b97b25b9e2054648&amp;id=05b2783da4"
+      method="post"
+      id="mc-embedded-subscribe-form"
+      name="mc-embedded-subscribe-form"
+      class="validate"
+      target="_blank"
+      rel="noopener noreferrer"
+      novalidate
+    >
+      <div id="mc_embed_signup_scroll">
+        <h2>Subscribe to our mailing list</h2>
+        <div class="indicates-required">
+          <span class="asterisk">*</span> indicates required
+        </div>
+        <div class="mc-field-group">
+          <label for="mce-EMAIL"
+            >Email Address <span class="asterisk">*</span>
+          </label>
+          <input
+            type="email"
+            value=""
+            name="EMAIL"
+            class="required email"
+            id="mce-EMAIL"
+          />
+        </div>
+        <div id="mce-responses" class="clear">
+          <div
+            class="response"
+            id="mce-error-response"
+            style="display: none;"
+          ></div>
+          <div
+            class="response"
+            id="mce-success-response"
+            style="display: none;"
+          ></div>
+        </div>
+        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+          <input
+            type="text"
+            name="b_8f9a0fd92b97b25b9e2054648_05b2783da4"
+            tabindex="-1"
+            value=""
+          />
+        </div>
+        <div class="clear">
+          <input
+            type="submit"
+            value="Subscribe"
+            name="subscribe"
+            id="mc-embedded-subscribe"
+            class="button"
+          />
+        </div>
+      </div>
+    </form>
+  </div>
+  <script
+    type="text/javascript"
+    src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+  ></script>
+  <script type="text/javascript">
+    (function ($) {
+      window.fnames = new Array();
+      window.ftypes = new Array();
+      fnames[0] = "EMAIL";
+      ftypes[0] = "email";
+      fnames[1] = "FNAME";
+      ftypes[1] = "text";
+      fnames[2] = "LNAME";
+      ftypes[2] = "text";
+    })(jQuery);
+    var $mcj = jQuery.noConflict(true);
+  </script>
+  <!--End mc_embed_signup-->
+</div>
