@@ -1,11 +1,38 @@
 ---
 layout: default
 title: Her House Ministry | Meet the Board
+members:
+  - name: Cheryl Thornsbrough
+    title: President
+    image: images/board-cherylthornsbrough.png
+  - name: Deloris Norman
+    title: Vice President
+    image: images/board-notpictured.png
+  - name: Kara Leik
+    title: Secretary
+    image: images/board-notpictured.png
+  - name: Anne Sheehan 
+    title: Director
+    image: images/board-notpictured.png
+  - name: Floyd Parr
+    title: Treasurer
+    image: images/board-notpictured.png
 ---
 
 <h1>Meet the Board</h1>
 
-<p>Updates Pending</p>
+<ul class="imagecaptionpanel">
+  {% for member in page.members %}
+  <li>
+    <img src="{{ member.image }}" />
+    <div class="caption">
+      <b>{{ member.name }}</b><br />
+      {{ member.title }}
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
 
 <!-- To separate the Board Members from Contact Us -->
 <div style="clear: both;"></div>
